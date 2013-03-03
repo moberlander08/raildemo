@@ -1,0 +1,27 @@
+<h2>Add a New Post </h1>
+
+<%= form_for @post do |f| %>
+	<%if @post.errors.any? %>
+		<h3>Errors: </h3>
+		<ul>
+		<% @post.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		<% end %>
+		</ul>
+	<% end %>
+	<p>
+		<%= f.label :title %><br />
+	</p>
+	<p>
+		<%= f.text_field :title %><br />
+	</p>
+	<p>
+		<%= f.label :content %><br />
+	</p>
+	<p>
+		<%= f.text_area :content %><br />
+	</p>
+	<p>
+		<%= f.submit "Add a New Post" %><br />
+	</p>
+<% end %>
